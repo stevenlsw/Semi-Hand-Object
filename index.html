@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<!-- ======================================================================= -->
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+<style type="text/css">
+    table {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    body {
+        font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+
+    h1 {
+        font-weight: 300;
+    }
+
+    .disclaimerbox {
+        background-color: #eee;
+        border: 1px solid #eeeeee;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    img {
+        width: 100%
+    }
+
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    img.rounded {
+        border: 1px solid #eeeeee;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    a:link, a:visited {
+        color: #1367a7;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #208799;
+    }
+
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35), /* The top layer shadow */ 5px 5px 0 0px #fff, /* The second layer */ 5px 5px 1px 1px rgba(0, 0, 0, 0.35), /* The second layer shadow */ 10px 10px 0 0px #fff, /* The third layer */ 10px 10px 1px 1px rgba(0, 0, 0, 0.35), /* The third layer shadow */ 15px 15px 0 0px #fff, /* The fourth layer */ 15px 15px 1px 1px rgba(0, 0, 0, 0.35), /* The fourth layer shadow */ 20px 20px 0 0px #fff, /* The fifth layer */ 20px 20px 1px 1px rgba(0, 0, 0, 0.35), /* The fifth layer shadow */ 25px 25px 0 0px #fff, /* The fifth layer */ 25px 25px 1px 1px rgba(0, 0, 0, 0.35); /* The fifth layer shadow */
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+
+    .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35), /* The top layer shadow */ 5px 5px 0 0px #fff, /* The second layer */ 5px 5px 1px 1px rgba(0, 0, 0, 0.35), /* The second layer shadow */ 10px 10px 0 0px #fff, /* The third layer */ 10px 10px 1px 1px rgba(0, 0, 0, 0.35); /* The third layer shadow */
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
+
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+
+
+    #authors td {
+        padding-bottom: 5px;
+        padding-top: 30px;
+    }
+</style>
+
+
+<head>
+
+    <title>AG2Video</title>
+    <meta property="og:title" content="Compositional Video Synthesis with Action Graphs"/>
+</head>
+
+<body>
+<br>
+<center>
+    <span style="font-size:36px">Semi-Supervised 3D Hand-Object Poses Estimation 
+        <br>with Interactions in Time</span>
+    <br><br>
+    <table align="center" width="800px">
+        <tbody><tr>
+                <td align="center" width="60px">
+          <center>
+            <span style="font-size:24px"><a href="https://stevenlsw.github.io/">Shaowei Liu*<sup style="font-size:10px">1</sup></a></span>
+            </center>
+            </td>
+                <td align="center" width="60px">
+          <center>
+            <span style="font-size:24px"><a href="https://hwjiang1510.github.io/">Hanwen Jiang*<sup style="font-size:10px">1</sup></a></span>
+            </center>
+            </td>
+                <td align="center" width="60px">
+          <center>
+            <span style="font-size:24px"><a href="http://jerryxu.net/">Jiarui Xu<sup style="font-size:10px">1</sup></a></span>
+            </center>
+            </td> 
+                <td align="center" width="60px">
+            <center>
+                <span style="font-size:24px"><a href="https://www.sifeiliu.net/">Sifei Liu<sup style="font-size:10px">2</sup></a></span>
+                </center>
+            </td> 
+                <td align="center" width="60px">
+            <center>
+            <span style="font-size:24px"><a href="https://xiaolonw.github.io/">Xiaolong Wang<sup style="font-size:10px">1</sup></a></span>
+            </center>
+            </td>
+    </tr></tbody></table>
+
+
+    <table align=center>
+        <tr>
+            <td align=center>
+                <center>
+                    <span style="font-size:20px">
+                        UC San Diego<sup style="font-size:10px">1</sup> &nbsp;NVIDIA Research<sup style="font-size:10px">2</sup>
+                    </span>
+                </center>
+            </td>
+        </tr>
+    </table>
+    <br>
+
+
+<!--    <span style="font-size:24px">Preprint. Under review.</span>-->
+
+    <table align=center, width="600px">
+        <tr>
+            <td align=center>
+                <center>
+                    <span style="font-size:24px">[Paper]</span>
+                </center>
+            </td>
+            <td align=center>
+                <center>
+                        <span style="font-size:24px">[Video]</span>
+                </center>
+            </td>
+            <td align=center>
+                <center>
+                        <span style="font-size:24px">[Code]</span>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+</center>
+<!--<left>    <span style="font-size:18px"><sup>*</sup>Equally contributed</span> </left>-->
+
+<br><br>
+<hr>
+<table align=center>
+    <center><h1>Abstract</h1></center>
+</table>
+Estimating 3D hand and object pose from a single image is an extremely challenging problem: 
+hands and objects are often self-occluded during interactions, 
+and the 3D annotations are scarce as even human cannot directly label the ground-truths from a single image perfectly. 
+To tackle these challenges, we propose a unified framework for estimating the 3D hand and object poses with semi-supervised learning. 
+We build a joint learning framework where we perform explicit contextual reasoning between hand and object representations. 
+Going beyond limited 3D annotations in a single image, we leverage the spatial-temporal consistency in large-scale hand-object videos 
+as a constraint for generating pseudo labels in semi-supervised learning. 
+Our method not only improves hand pose estimation in challenging real-world dataset, 
+but also substantially improve the object pose which has less ground-truths per instance. 
+By training with large-scale diverse videos, our model also generalizes better across multiple out-of-domain datasets. 
+<br><br>
+
+<br>
+<br>
+<hr>
+
+<!-- <table align=center>
+    <center><h1>Contributions</h1></center>
+</table>
+Our contributions include: <br>
+1) An unified framework for joint 3D hand and object pose estimation. <br>
+2) A semi-supervised learning pipeline which exploits large-scale unlabeled hand-object interaction videos. <br>
+3) Substantial performance improvement on hand and object pose estimations, and generalization to out-of-domain data.
+<br>
+<hr>
+<br> -->
+
+<table align=center>
+    <center><h1>Overview</h1></center>
+</table>
+<p>
+    The proposed semi-supervised learning framework and results. We train an initial model on an annotated dataset, 
+    and deploy it on a large-scale video dataset to collect pseudo-labels. 
+    We leverage spatial-temporal consistency to obtain pseudo-labels and use them for self-training. 
+    After the semi-supervised learning, both the performance of hand-object pose estimation 
+    and hand pose generalization are improved.
+</p>
+<center><img src="figs/ho-teaser.png" align="middle"></center>
+<br>
+<br>
+
+<table align=center>
+    <center><h1 id="model">Framework</h1></center>
+</table>
+<p>
+    The framework for hand-object 3D poses joint estimation. 
+    The model consists of the shared encoder, the contextual reasoning module for modeling hand-object interaction 
+    and two decoders for estimating hand-object poses.
+</p>
+<center><img src="figs/supervise.png" align="middle"></center>
+<br>
+<br>
+
+<hr>
+<br>
+
+
+<table align=center>
+    <center><h1>Visualization</h1></center>
+</table>
+
+<br>
+<!-- <table align=center>
+    <center><h1>Qualitative Results on <a href="https://www.tugraz.at/index.php?id=40231">HO-3D Dataset</a></h1></center> -->
+    <!-- <center><h1>Qualitative Results on HO-3D Dataset</a></h1></center>
+</table> --> 
+<table align=center>
+    <tr>
+        <center><img src="figs/vis_ho3d.png" align="middle"></center>
+        <p>Qualitative results of predicted hand-object pose estimation on the HO-3D dataset. 
+            For each example, the first two columns show the recovered hand mesh and estimated 6-Dof object pose, 
+            the third row shows the estimated hand-object in 3D, the color of the object indicates the 3D object mesh error.</p>
+    </tr>
+</table>
+<br>
+<br>
+
+<!-- <table>
+    <tr>
+        <center><img src="figs/vis_pseudo.png" align="middle"></center>
+        <p>Examples of hand mesh pseudo-labels generated from the Something-something dataset.</p>
+    </tr>
+</table> -->
+
+<hr>
+<br>
+
+<table align=center>
+    <center><h1>Paper</h1></center>
+    <tr>
+        <td><a href="https://arxiv.org/pdf/2006.15327.pdf"><img class="layered-paper-big" style="height:175px; width: 150px; margin-bottom: 50px"
+                                                                src="data/figures/paper.png"/></a></td>
+        <td><a href="https://arxiv.org/pdf/2006.15327.pdf"></a></td>
+        <td>
+                <span style="font-size:14pt">Shaowei Liu*, Hanwen Jiang*, Jiarui Xu, Sifei Liu, Xiaolong Wang<br>
+              <i>Semi-Supervised 3D Hand-Object Poses Estimation with Interactions in Time</i>
+              <br>
+            <!-- Arxiv<br> -->
+            <!-- Hosted on <a href="">arXiv</a> -->
+                </span>
+            <br>
+            <span style="font-size:18px"><sup>*</sup>Equal contribution</span>
+        </td>
+        <span style="font-size:4pt"><a href=""><br></a></span>
+    </tr>
+</table>
+
+
+</body>
+</html>
