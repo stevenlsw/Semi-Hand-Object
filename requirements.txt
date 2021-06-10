@@ -1,0 +1,9 @@
+numpy>=1.16.2
+torchvision
+torch>=1.0.1.post2
+chumpy
+trimesh
+pillow
+matplotlib
+opencv-python
+git+git://github.com/hassony2/manopth.git
