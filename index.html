@@ -20,12 +20,22 @@
     <link href="offcanvas.css" rel="stylesheet">
 
     <style>
+        h1, h2, h3, h4, h5 {text-align: center;}
         h1, h2, h3, h4, h5, a, p, span, body {font-weight: normal; font-family: sans-serif;}
         .header {background-color: #f3f3f7; }
+        .nobreak {white-space: nowrap;}
+        .abstract {max-width: 680px; margin: auto;}
+        .hr {width: 100%; height: 1px; margin: 48px 0; background-color: #d6dbdf;}
+        .figure {width: 100%; min-height: 120px; margin: 36px 0; background-repeat: no-repeat; background-position: center; background-size: contain;}
+        .youtube {position: relative;}
+        .youtube iframe {margin: auto; display: block; margin-top: 48px;}
+        .content-video {width: 100%; margin: 0; text-align: center;}
+        .content-video-container {width: 100%; max-width: 900px; margin: auto}
+        .bibtexsection {padding: 4px 16px; font-family: "Courier", monospace; font-size: 14px; white-space: pre; background-color: #f4f4f4; text-align: left;}
+.noselect {-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
         </style>
     </head>
-        
-
+    
 <div class="jumbotron header">
     <h2>Semi-Supervised 3D Hand-Object Poses Estimation<br>with Interactions in Time</h2>
     <h3>CVPR 2021</h3>
@@ -44,62 +54,217 @@
 </div>
 
 <body>
-<div style="background-image: url(figs/ho-teaser.png); width: 100%; min-height: 220px; background-repeat: no-repeat; background-position: center; background-size: contain;"></div>
 <div class="container">
-    <div class="section">
-        <p>
-        Estimating 3D hand and object pose from a single image is an extremely challenging problem: 
-        hands and objects are often self-occluded during interactions, 
-        and the 3D annotations are scarce as even humans cannot directly label the ground-truths from a single image perfectly. 
-        To tackle these challenges, we propose a unified framework for estimating the 3D hand and object poses with semi-supervised learning. 
-        We build a joint learning framework where we perform explicit contextual reasoning between hand and object representations by a Transformer. 
-        Going beyond limited 3D annotations in a single image, 
-        we leverage the spatial-temporal consistency in large-scale hand-object videos as a constraint 
-        for generating pseudo labels in semi-supervised learning. 
-        Our method not only improves hand pose estimation in challenging real-world dataset, 
-        but also substantially improve the object pose which has fewer ground-truths per instance. 
-        By training with large-scale diverse videos, our model also generalizes better across multiple out-of-domain datasets.
-        </p>
-    </div>
+    <div class="content-video" style="margin-top: -12px; margin-bottom: 32px">
+		<div class="content-video-container">
+			<video playsinline="" autoplay="" loop="" preload="" muted="" width="60%">
+				<source src="figs/ho2021.mp4" type="video/mp4"/>
+			</video>
+		</div>
+	</div>
 
-    <div class="section">
-        <div class="vcontainer">
-            <iframe class='video' src="https://www.youtube.com/embed/7bnl2olUt-0" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+    <div class="hr"></div>
+
+    <div>
+		<h2>Summary</h2>
+		<p class="abstract">
+            Estimating 3D hand and object pose from a single image is an extremely challenging problem: 
+            hands and objects are often self-occluded during interactions, 
+            and the 3D annotations are scarce as even humans cannot directly label the ground-truths from a single image perfectly. 
+            To tackle these challenges, we propose a unified framework for estimating the 3D hand and object poses with semi-supervised learning. 
+            We build a joint learning framework where we perform explicit contextual reasoning between hand and object representations by a Transformer. 
+            Going beyond limited 3D annotations in a single image, 
+            we leverage the spatial-temporal consistency in large-scale hand-object videos as a constraint 
+            for generating pseudo labels in semi-supervised learning. 
+            Our method not only improves hand pose estimation in challenging real-world dataset, 
+            but also substantially improve the object pose which has fewer ground-truths per instance. 
+            By training with large-scale diverse videos, our model also generalizes better across multiple out-of-domain datasets.
+		</p>
+	</div>
+
+	<div class="hr"></div>
+
+    <div>
+		<h2>Video</h2>
+		<div class="youtube">
+			<iframe width="784" height="442" src="https://www.youtube.com/embed/7bnl2olUt-0" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+			<div style="position: absolute; top: 0; width: 100%; height: 1px; background-color: #fff; z-index: 99;"></div>
+			<div style="position: absolute; bottom: 0; width: 100%; height: 1px; background-color: #fff; z-index: 99;"></div>
+		</div>
+	</div>
+	<div class="hr"></div>
+
+    <div>
+		<h2>Pseudo-labels on Something-Something</h2>
+        <h5 style="text-align: center;">
+            Selected frames in <span style="color:green">green</span>, unselected in <span style="color:red">red</span>
+        </h5>
+        <br>
+        <div class="content-video" style="margin-top: -12px; margin-bottom: 32px">
+			<div class="content-video-container">
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="25%">
+					<source src="figs/sth/vis-667.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="25%">
+					<source src="figs/sth/vis-22.mp4" type="video/mp4"/>
+				</video>
+                <video playsinline="" autoplay="" loop="" preload="" muted="" width="25%">
+                    <source src="figs/sth/vis-403.mp4" type="video/mp4"/>
+                </video>
+                <video playsinline="" autoplay="" loop="" preload="" muted="" width="25%">
+					<source src="figs/sth/vis-780.mp4" type="video/mp4"/>
+				</video>
+                <video playsinline="" autoplay="" loop="" preload="" muted="" width="25%">
+					<source src="figs/sth/vis-830.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="25%">
+					<source src="figs/sth/vis-1044.mp4" type="video/mp4"/>
+				</video>
+                <video playsinline="" autoplay="" loop="" preload="" muted="" width="25%">
+					<source src="figs/sth/vis-1147.mp4" type="video/mp4"/>
+				</video>
+                <video playsinline="" autoplay="" loop="" preload="" muted="" width="25%">
+					<source src="figs/sth/vis-1394.mp4" type="video/mp4"/>
+				</video>
+			</div>
+		</div>
+    </div>
+    <h5 style="text-align: center;">
+        Pseudo-labels contain a wide range of domains with different subjects, lighting, objects, and backgrounds.
+    </h5>
+    <br>
+    <div class="content-video" style="margin-top: -12px; margin-bottom: 32px">
+        <div class="content-video-container">
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="60%">
+                <source src="figs/sth/pseudo.mp4" type="video/mp4"/>
+            </video>
         </div>
     </div>
+    <div class="hr"></div>
 
-    <div class="section">
-        <h4 style="text-align: center;">BibTeX</h4>
-        <hr>
-        <div id="bibtex-text" class="bibtexsection" onClick="window.getSelection().selectAllChildren(document.getElementById('bibtex-text'));">
+
+    <div>
+		<h2>Results on HO3D</h2>
+        <h5 style="text-align: center;">
+            <span style="color:red">Red</span> indicates larger object mesh estimation error.<br> 
+            Baseline: w/o semi-supervised & w/o contextual reasoning.
+        </h5>
+        <table table width="80%" align="center" border="0" cellspacing="0" cellpadding="20">
+			<tbody>
+				<th width=40% style="text-align: center";>Proposed</th>
+				<th width=40% style="text-align: center";>Baseline</th>
+		</tbody></table>
+        <div class="content-video" style="margin-top: -12px; margin-bottom: 32px">
+			<div class="content-video-container">
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="45%">
+					<source src="figs/ho3d/p-1.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="45%">
+					<source src="figs/ho3d/b-1.mp4" type="video/mp4"/>
+				</video>
+			</div>
+		</div>
+        <br>
+        <div class="content-video" style="margin-top: -12px; margin-bottom: 32px">
+			<div class="content-video-container">
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="45%">
+					<source src="figs/ho3d/p-2.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="45%">
+					<source src="figs/ho3d/b-2.mp4" type="video/mp4"/>
+				</video>
+			</div>
+		</div>
+        <br>
+        <div class="content-video" style="margin-top: -12px; margin-bottom: 32px">
+			<div class="content-video-container">
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="45%">
+					<source src="figs/ho3d/p-3.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="45%">
+					<source src="figs/ho3d/b-3.mp4" type="video/mp4"/>
+				</video>
+			</div>
+		</div>  
+    </div>
+
+    <div class="hr"></div>
+
+	<div>
+		<h2>Generalization on FPHA</h2>
+        <h5 style="text-align: center;">
+            All models have not trained on the FPHA.<br> 
+            Compare before & after semi-supervised learning. 
+        </h5>
+        <table table width="80%" cellspacing="0" cellpadding="20">
+			<tbody>
+                <th width=30 style="text-align: center";>Input Video</th>
+				<th width=30 style="text-align: center";>Before Semi</th>
+				<th width=30 style="text-align: center";>After Semi</th>
+		</tbody></table>
+        <div class="content-video" style="margin-top: -12px; margin-bottom: 32px">
+			<div class="content-video-container">
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="30%">
+					<source src="figs/fpha/raw-1.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="30%">
+					<source src="figs/fpha/b-1.mp4" type="video/mp4"/>
+				</video>
+                <video playsinline="" autoplay="" loop="" preload="" muted="" width="30%">
+					<source src="figs/fpha/p-1.mp4" type="video/mp4"/>
+				</video>
+			</div>
+		</div>
+        <br>
+        <div class="content-video" style="margin-top: -12px; margin-bottom: 32px">
+			<div class="content-video-container">
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="30%">
+					<source src="figs/fpha/raw-1.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="30%">
+					<source src="figs/fpha/b-2.mp4" type="video/mp4"/>
+				</video>
+                <video playsinline="" autoplay="" loop="" preload="" muted="" width="30%">
+					<source src="figs/fpha/p-2.mp4" type="video/mp4"/>
+				</video>
+			</div>
+		</div>
+        <br>
+        <div class="content-video" style="margin-top: -12px; margin-bottom: 32px">
+			<div class="content-video-container">
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="30%">
+					<source src="figs/fpha/raw-3.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="30%">
+					<source src="figs/fpha/b-3.mp4" type="video/mp4"/>
+				</video>
+                <video playsinline="" autoplay="" loop="" preload="" muted="" width="30%">
+					<source src="figs/fpha/p-3.mp4" type="video/mp4"/>
+				</video>
+			</div>
+		</div>  
+    </div>
+
+	<div class="hr"></div>
+
+    <div style="padding-bottom: 64px; text-align: center;">
+		<h2>Bibtex</h2>
+		<div id="bibtex-text" class="bibtexsection" onClick="window.getSelection().selectAllChildren(document.getElementById('bibtex-text'));">
             @inproceedings{liu2021semi, 
                 title={Semi-Supervised 3D Hand-Object Poses Estimation with Interactions in Time}, 
                 author={Liu, Shaowei and Jiang, Hanwen and Xu, Jiarui and Liu, Sifei and Wang, Xiaolong}, 
                 booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition}, 
-                year={2021}
+                year={2021}, 
             }
-        </div>
-    </div>
+		</div>
+	</div>
 
-	<hr>
-
-	<footer>
-        <p><span style="color: #AAAAAA">Acknowledgment: website template from <a href="https://vsitzmann.github.io/siren/">SIREN</a></span></p>
+    <footer>
+        <p><span style="color: #AAAAAA">Acknowledgment: website template from <a href="https://vsitzmann.github.io/siren/">SIREN</a> and <a href="https://nicklashansen.github.io/SODA/">SODA</a>
+            <!-- Correspondence to <a href="http://stevenlsw.github.io/">Shaowei</a></span></p> -->
     </footer>
 
 </div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
 
 </body>
 </html>
