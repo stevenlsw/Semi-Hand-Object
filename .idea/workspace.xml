@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a14f9e67-2b49-4b31-8f99-c6352ad8695c" name="Default Changelist" comment="" />
+    <list default="true" id="a14f9e67-2b49-4b31-8f99-c6352ad8695c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/figs/teaser.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/figs/teaser.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/models_earlier.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +22,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1rkAQhW5GaZxKXuqyqBK7htuWAa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,6 +34,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -59,9 +72,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="494" y="359" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1623273304937" />
-    <state x="495" y="289" width="689" height="472" key="find.popup" timestamp="1622170735124">
+    <state x="495" y="289" width="689" height="472" key="find.popup" timestamp="1623371868036">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="495" y="289" width="689" height="472" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1622170735124" />
+    <state x="495" y="289" width="689" height="472" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1623371868036" />
   </component>
 </project>

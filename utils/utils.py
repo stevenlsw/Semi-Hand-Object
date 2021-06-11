@@ -146,42 +146,25 @@ def get_network(args):
     else:
         pretrained = True
 
-    if args.network == "honet_attention":
-        from utils.models_earlier import HONet, HOModel
+    from models import HONet, HOModel
 
-        net = HONet(stacks=args.stacks, channels=args.channels, blocks=args.blocks,
-                    mano_layer=mano_layer, mano_neurons=args.mano_neurons,
-                    coord_change_mat=coord_change_mat,
-                    reg_object=True, pretrained=pretrained)
-        net = torch.nn.DataParallel(net)
-        model = HOModel(net, mano_lambda_verts3d=args.mano_lambda_verts3d,
-                        mano_lambda_joints3d=args.mano_lambda_joints3d,
-                        mano_lambda_manopose=args.mano_lambda_manopose,
-                        mano_lambda_manoshape=args.mano_lambda_manoshape,
-                        mano_lambda_regulshape=args.mano_lambda_regulshape,
-                        mano_lambda_regulpose=args.mano_lambda_regulpose,
-                        lambda_joints2d=args.lambda_joints2d,
-                        lambda_objects=args.lambda_objects)
-    else:
-        from models import HONet, HOModel
+    net = HONet(stacks=args.stacks, channels=args.channels, blocks=args.blocks,
+                mano_layer=mano_layer, mano_neurons=args.mano_neurons,
+                transformer_depth=args.transformer_depth,
+                transformer_head=args.transformer_head,
+                coord_change_mat=coord_change_mat,
+                reg_object=True, pretrained=pretrained)
 
-        net = HONet(stacks=args.stacks, channels=args.channels, blocks=args.blocks,
-                    mano_layer=mano_layer, mano_neurons=args.mano_neurons,
-                    transformer_depth=args.transformer_depth,
-                    transformer_head=args.transformer_head,
-                    coord_change_mat=coord_change_mat,
-                    reg_object=True, pretrained=pretrained)
+    net = torch.nn.DataParallel(net)
 
-        net = torch.nn.DataParallel(net)
-
-        model = HOModel(net, mano_lambda_verts3d=args.mano_lambda_verts3d,
-                        mano_lambda_joints3d=args.mano_lambda_joints3d,
-                        mano_lambda_manopose=args.mano_lambda_manopose,
-                        mano_lambda_manoshape=args.mano_lambda_manoshape,
-                        mano_lambda_regulshape=args.mano_lambda_regulshape,
-                        mano_lambda_regulpose=args.mano_lambda_regulpose,
-                        lambda_joints2d=args.lambda_joints2d,
-                        lambda_objects=args.lambda_objects)
+    model = HOModel(net, mano_lambda_verts3d=args.mano_lambda_verts3d,
+                    mano_lambda_joints3d=args.mano_lambda_joints3d,
+                    mano_lambda_manopose=args.mano_lambda_manopose,
+                    mano_lambda_manoshape=args.mano_lambda_manoshape,
+                    mano_lambda_regulshape=args.mano_lambda_regulshape,
+                    mano_lambda_regulpose=args.mano_lambda_regulpose,
+                    lambda_joints2d=args.lambda_joints2d,
+                    lambda_objects=args.lambda_objects)
 
     return model
 

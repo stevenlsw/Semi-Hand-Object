@@ -1,6 +1,7 @@
 legacy/*
 .DS_Store
 debug/*
+.gitignore
 *.DS_Store
 *.json
 *.mat
@@ -13,6 +14,9 @@ preds/*
 __pycache__/
 *.py[cod]
 *$py.class
+*.zip
+*/*.zip
+.idea/
 
 # C extensions
 *.so
