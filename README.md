@@ -72,7 +72,7 @@ The testing results will be saved in the `$host_folder`, which contains the foll
 
 
 ### Training
-Please download the [preprocessed files](https://drive.google.com/file/d/1yDOJW1QbEzKjHequi-Kod1Qv6_vL_K1d) to train HO3D dataset. 
+Please download the [preprocessed files](https://drive.google.com/file/d/1BcUNxdlPDFwvAHcs1tcvwMyhsr6nxxzR/view?usp=sharing) to train HO3D dataset. 
 The downloaded files contains training list and labels generated from the original dataset to accelerate training. 
 Please put the unzipped folder `ho3d-process` to current directory.  
 
