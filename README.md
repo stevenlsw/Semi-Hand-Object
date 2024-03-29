@@ -56,7 +56,7 @@ Please download the trained model and save to path you like, the model path is r
 
 | trained-model | joint↓ | mesh↓ | cleanser↑ | bottle↑ | can↑ | ave↑ |
 |---------|--------------|--------|-------|-----------|---------|------|
-|  [link](https://drive.google.com/file/d/1Y4fICIY63MA4J1FiY8QfBAF_AKzMEjDn) |  0.99  |  0.95 |    92.2   |   80.4  | 55.7 | 76.1 |
+|  [link](https://drive.google.com/file/d/1s3vIsYjiTLOKiBVBsaj8BtiNMlttEPrw/view?usp=sharing) |  0.99  |  0.95 |    92.2   |   80.4  | 55.7 | 76.1 |
 
 
 - #### Testing with trained model
